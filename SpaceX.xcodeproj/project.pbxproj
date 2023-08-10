@@ -16,6 +16,7 @@
 		F17CA3ED2A81376F00CFE030 /* SpaceXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17CA3EC2A81376F00CFE030 /* SpaceXTests.swift */; };
 		F17CA3F72A81376F00CFE030 /* SpaceXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17CA3F62A81376F00CFE030 /* SpaceXUITests.swift */; };
 		F17CA3F92A81376F00CFE030 /* SpaceXUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17CA3F82A81376F00CFE030 /* SpaceXUITestsLaunchTests.swift */; };
+		F17CA4072A8162DB00CFE030 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17CA4062A8162DB00CFE030 /* NetworkSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F17CA3F22A81376F00CFE030 /* SpaceXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17CA3F62A81376F00CFE030 /* SpaceXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXUITests.swift; sourceTree = "<group>"; };
 		F17CA3F82A81376F00CFE030 /* SpaceXUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F17CA4062A8162DB00CFE030 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		F17CA3D42A81376D00CFE030 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				F17CA4052A8162C200CFE030 /* Network */,
 				F17CA3D52A81376D00CFE030 /* AppDelegate.swift */,
 				F17CA3D72A81376D00CFE030 /* SceneDelegate.swift */,
 				F17CA3D92A81376D00CFE030 /* ViewController.swift */,
@@ -125,6 +128,14 @@
 				F17CA3F82A81376F00CFE030 /* SpaceXUITestsLaunchTests.swift */,
 			);
 			path = SpaceXUITests;
+			sourceTree = "<group>";
+		};
+		F17CA4052A8162C200CFE030 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F17CA4062A8162DB00CFE030 /* NetworkSession.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17CA3DA2A81376D00CFE030 /* ViewController.swift in Sources */,
+				F17CA4072A8162DB00CFE030 /* NetworkSession.swift in Sources */,
 				F17CA3D62A81376D00CFE030 /* AppDelegate.swift in Sources */,
 				F17CA3D82A81376D00CFE030 /* SceneDelegate.swift in Sources */,
 			);
