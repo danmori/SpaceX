@@ -6,23 +6,20 @@
 //
 
 import Foundation
-import Combine
 
 protocol HTTPClient {
-    func publisher(request: URLRequest) -> AnyPublisher<(Data, HTTPURLResponse), Error>
+    func request(request: URLRequest) async throws -> (Data, HTTPURLResponse)
 }
 
 extension URLSession: HTTPClient {
     struct InvalidHTTPResponseError: Error {}
     
-    func publisher(request: URLRequest) -> AnyPublisher<(Data, HTTPURLResponse), Error> {
-        return dataTaskPublisher(for: request)
-            .tryMap({ result in
-                guard let httpResponse = result.response as? HTTPURLResponse else {
-                    throw InvalidHTTPResponseError()
-                }
-                return (result.data, httpResponse)
-            })
-            .eraseToAnyPublisher()
+    func request(request: URLRequest) async throws -> (Data, HTTPURLResponse) {
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw InvalidHTTPResponseError()
+        }        
+        return (data, httpResponse)
     }
+
 }
